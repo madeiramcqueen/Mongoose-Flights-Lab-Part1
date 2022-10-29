@@ -11,8 +11,8 @@ function newFlight(req, res) {
 }
 
 function index(req, res) {
-    // movies referes to found Flight documents in MongoDB
-    Movie.find({}, function (err, flights) {
+    // flights referes to found Flight documents in MongoDB
+    Flight.find({}, function (err, flights) {
         if (err) {
             console.log(err);
             res.redirect("/");
@@ -28,14 +28,14 @@ function create(req, res) {
     req.body.cast = req.body.cast.trim();
     // split cast into an array if it's not an empty string - using a regular expression as a separator
     if (req.body.cast) req.body.cast = req.body.cast.split(/\s*,\s*/);
-    const movie = new Movie(req.body);
+    const flight = new Flight(req.body);
     // save movie into database
-    movie.save(function (err) {
+    flight.save(function (err) {
         // if we don't redirect, the new page will be shown
-        // with /movies in the address bar
-        if (err) return res.redirect("/movies/new");
-        console.log(movie);
+        // with /flights in the address bar
+        if (err) return res.redirect("/flights/new");
+        console.log(flight);
         // for now, redirect back to new.ejs
-        res.redirect("/movies");
+        res.redirect("/flights");
     });
 }
