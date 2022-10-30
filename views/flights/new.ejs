@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include('../partials/head') %>
+    <%- include('../partials/navbar') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Flight</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Add Flight</title>
+            <link rel='stylesheet' href='/stylesheets/style.css' />
+        </head>
 
-<body>
-    <h2>Enter New Flight Information</h2>
-    <form action="/flights" method="POST">
-        <label>Airline:
-            <select name="airline">
-                <option value="American">American</option>
-                <option value="Southwest">Southwest</option>
-                <option value="United">United</option>
-            </select>
-        </label><br>
-        <label>Airport:
-            <select name="airport">
-                <option value="DEN" selected>Denver</option>
-                <option value="AUS">Austin</option>
-                <option value="DFW">Dallas Fort Worth</option>
-                <option value="LAX">Las Angeles</option>
-                <option value="SAN">San Diego</option>
-            </select>
-        </label><br>
-        <label>Flight Number:
-            <input type="number" min="10" max="9999" name="flightNo">
-        </label><br>
-        <label> Departs:
-            <input type="datetime-local" name="departs" value="2023-10-01T08:30">
-        </label> <br>
-        <input type="submit" value="Add Flight">
-    </form>
+        <body>
+            <h2>Enter New Flight Information</h2>
+            <form action="/flights" method="POST">
+                <label>Airline:
+                    <select name="airline">
+                        <option value="American">American</option>
+                        <option value="Southwest">Southwest</option>
+                        <option value="United">United</option>
+                    </select>
+                </label><br>
+                <label>Airport:
+                    <select name="airport">
+                        <option value="DEN" selected>Denver</option>
+                        <option value="AUS">Austin</option>
+                        <option value="DFW">Dallas Fort Worth</option>
+                        <option value="LAX">Las Angeles</option>
+                        <option value="SAN">San Diego</option>
+                    </select>
+                </label><br>
+                <label>Flight Number:
+                    <input type="number" min="10" max="9999" name="flightNo">
+                </label><br>
+                <label> Departs:
+                    <input type="datetime-local" name="departs" value="2023-10-01T08:30">
+                </label> <br>
+                <input type="submit" value="Add Flight">
+            </form>
 
-</body>
+        </body>
 
 </html>
