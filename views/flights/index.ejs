@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Write the line of EJS to iterate over movies using forEach -->
+                    <!-- Write the line of EJS to iterate over flights using forEach -->
                     <% flights.forEach(f=> { %>
                         <tr>
                             <td>
@@ -38,6 +38,7 @@
                             </td>
                             <td>
                                 <%= f.departs %>
+                                <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
                             </td>
 
                         </tr>
