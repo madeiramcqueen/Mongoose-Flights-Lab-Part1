@@ -29,6 +29,13 @@
                     <%= flight.departs %>
                 </div>
             </section>
+
+            <br><br>
+            <h2>Add A Destination</h2>
+            <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
+                <textarea name="content"></textarea>
+                <input type="submit" value="Add Destination">
+            </form>
         </body>
 
 </html>
