@@ -4,6 +4,7 @@ module.exports = {
     new: newFlight,
     create,
     index,
+    show,
 };
 
 function newFlight(req, res) {
@@ -24,7 +25,7 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    // flights referes to found Flight documents in MongoDB
+    // flights refers to found Flight documents in MongoDB
     Flight.find({}, function (err, flights) {
         if (err) {
             console.log(err);
@@ -32,4 +33,10 @@ function index(req, res) {
         }
         res.render("flights/index", { flights });
     });
+}
+
+function show(req, res) {
+    Flight.findById(req.params.id, function (err, flight) {
+        res.render('flights/show', { flight })
+    })
 }

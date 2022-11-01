@@ -11,4 +11,7 @@ router.post('/', flightsCtrl.create);
 /* GET new flights listing. */
 router.get('/new', flightsCtrl.new);
 
+/* SHOW flight details. */
+router.get('/:id', flightsCtrl.show);
+
 module.exports = router;
