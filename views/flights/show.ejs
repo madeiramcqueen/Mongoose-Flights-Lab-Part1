@@ -47,6 +47,7 @@
                 <br>
                 <input type="submit" value="Add Arrival">
             </form>
+
             <% flight.destinations.forEach(function(d) { %>
                 <div>
                     <div>
@@ -57,6 +58,20 @@
                     </div>
                 </div>
                 <% }); %>
+
+                    <h2>Create A Ticket</h2>
+                    <form action="/flights/<%= flight._id %>/destinations" method="POST">
+                        <label>Seat:
+                            <input name="seat" required pattern="[A-F][1-9]\d">
+                        </label><br>
+                        <label> Price: </label>
+                        <input type="number" min="0" max="9999" name="price">
+                        <br>
+                        <label>Flight:
+                            <%= flight._id %>
+                        </label>
+                        <input type="submit" value="Add Ticket">
+                    </form>
         </body>
 
 </html>
