@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var flightsCtrl = require('../controllers/flights');
 var destinationsCtrl = require('../controllers/destinations');
+var ticketsCtrl = require('../controllers/tickets');
 
 /* GET all flights listings. */
 router.get('/', flightsCtrl.index)
@@ -16,6 +17,9 @@ router.get('/new', flightsCtrl.new);
 router.get('/:id', flightsCtrl.show);
 
 /* POST flight destination details. */
-router.post('/:id/destinations', destinationsCtrl.create)
+router.post('/:id/destinations', destinationsCtrl.create);
+
+/* POST created ticket details. */
+router.post('/:id/tickets', ticketsCtrl.create);
 
 module.exports = router;
