@@ -32,10 +32,31 @@
 
             <br><br>
             <h2>Add A Destination</h2>
-            <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
-                <textarea name="content"></textarea>
-                <input type="submit" value="Add Destination">
+            <form action="/flights/<%= flight._id %>/destinations" method="POST">
+                <label>Airport:
+                    <select name="airport">
+                        <option value="AUS">Austin</option>
+                        <option value="DEN">Denver</option>
+                        <option value="DFW">Dallas Fort Worth</option>
+                        <option value="LAX">Las Angeles</option>
+                        <option value="SAN">San Diego</option>
+                    </select>
+                </label><br>
+                <label for="arrival"> Arrival Date & Time: </label>
+                <input type="datetime-local" id="arrival" name="arrival">
+                <br>
+                <input type="submit" value="Add Arrival">
             </form>
+            <% flight.destinations.forEach(function(d) { %>
+                <div>
+                    <div>
+                        <%= d.airport %>
+                    </div>
+                    <div>
+                        <%= d.arrival %>
+                    </div>
+                </div>
+                <% }); %>
         </body>
 
 </html>
