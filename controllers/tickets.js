@@ -9,8 +9,8 @@
 //     Flight.findById(req.params.id, function (err, flight) {
 //         Ticket.find({flight: flight._id}, function(err, tickets))
 //         flight.tickets.push(req.body);
-//         flight.save(function (err) {
-//             res.redirect(`/flights/${flight._id}`)
+//         ticket.save(function (err) {
+//             res.redirect(`/flights/${ticket._id}`)
 //         })
 //     })
 // };

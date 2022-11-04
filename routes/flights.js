@@ -20,6 +20,6 @@ router.get('/:id', flightsCtrl.show);
 router.post('/:id/destinations', destinationsCtrl.create);
 
 /* POST created ticket details. */
-router.post('/:id/tickets', ticketsCtrl.create);
+// router.post('/:id/tickets', ticketsCtrl.create);
 
 module.exports = router;
