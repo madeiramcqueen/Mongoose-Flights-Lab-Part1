@@ -19,6 +19,9 @@ router.get('/:id', flightsCtrl.show);
 /* POST flight destination details. */
 router.post('/:id/destinations', destinationsCtrl.create);
 
+/* GET new tickets listing. */
+router.get('/:id/tickets/new', ticketsCtrl.new);
+
 /* POST created ticket details. */
 // router.post('/:id/tickets', ticketsCtrl.create);
 
