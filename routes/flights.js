@@ -23,6 +23,6 @@ router.post('/:id/destinations', destinationsCtrl.create);
 router.get('/:id/tickets/new', ticketsCtrl.new);
 
 /* POST created ticket details. */
-// router.post('/:id/tickets', ticketsCtrl.create);
+router.post('/:id/tickets', ticketsCtrl.create);
 
 module.exports = router;
